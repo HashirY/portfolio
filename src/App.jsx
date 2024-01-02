@@ -159,7 +159,7 @@ function App() {
               </p>
             </div>
             <div>
-              <div className="blob ml-20 mt-10 lg:mt-0 mx-auto"></div>
+              <div className="blob ml-0 md:ml-20 mt-10 lg:mt-0 mx-auto"></div>
             </div>
           </section>
           <Footer />
