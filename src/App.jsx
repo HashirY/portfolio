@@ -182,46 +182,44 @@ function App() {
           </motion.main>
 
           <section className="flex flex-col mt-10 gap-6 font-ubuntu">
-            <Link to={""}>
-              <ProjectComponent
-                firstProjectVariants={firstProjectVariants}
-                imgName={"lms-main.png"}
-                siteLink={"https://lms-studify-main.vercel.app/"}
-                githubLink={"https://github.com/HashirY/LMS-Studify"}
-                projectName={"Studify"}
-                projectSubheading={"A learning management system"}
-                projectDescription={
-                  "Developed a seamless Learning Management System that blends education and entrepreneurship"
-                }
-                projectTechStack={[
-                  {
-                    name: "Next.js",
-                    icon: <SiNextdotjs />,
-                  },
-                  {
-                    name: "Tailwind",
-                    icon: <SiTailwindcss />,
-                  },
-                  {
-                    name: "TypeScript",
-                    icon: <SiTypescript />,
-                  },
-                  {
-                    name: "Stripe",
-                    icon: <FaStripeS />,
-                  },
-                  {
-                    name: "Prisma",
-                    icon: <SiPrisma />,
-                  },
-                  {
-                    name: "SQL",
-                    icon: <GrMysql />,
-                  },
-                ]}
-                leftOrRight={"left"}
-              />
-            </Link>
+            <ProjectComponent
+              firstProjectVariants={firstProjectVariants}
+              imgName={"lms-main.png"}
+              siteLink={"https://lms-studify-main.vercel.app/"}
+              githubLink={"https://github.com/HashirY/LMS-Studify"}
+              projectName={"Studify"}
+              projectSubheading={"A learning management system"}
+              projectDescription={
+                "Developed a seamless Learning Management System that blends education and entrepreneurship"
+              }
+              projectTechStack={[
+                {
+                  name: "Next.js",
+                  icon: <SiNextdotjs />,
+                },
+                {
+                  name: "Tailwind",
+                  icon: <SiTailwindcss />,
+                },
+                {
+                  name: "TypeScript",
+                  icon: <SiTypescript />,
+                },
+                {
+                  name: "Stripe",
+                  icon: <FaStripeS />,
+                },
+                {
+                  name: "Prisma",
+                  icon: <SiPrisma />,
+                },
+                {
+                  name: "SQL",
+                  icon: <GrMysql />,
+                },
+              ]}
+              leftOrRight={"left"}
+            />
             <ProjectComponent
               firstProjectVariants={secondProjectVariants}
               imgName={"mern-estate.png"}
