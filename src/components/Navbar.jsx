@@ -13,7 +13,7 @@ const Navbar = ({ setCurrentPage }) => {
         transition={{ duration: 4, repeat: Infinity }}
         whileHover={{ y: 0, x: 0 }} // Stop animation on hover
       >
-        <h1 className="font-bold text-2xl">
+        <h1 className="font-bold lg:text-2xl sm:text-md">
           <span>hashir</span>
           <span>.</span>
           <span>dev</span>
@@ -21,7 +21,7 @@ const Navbar = ({ setCurrentPage }) => {
         </h1>
       </motion.div>
       <motion.div
-        className=" cursor-none hover:cursor-none border-b-4  border-secondary flex gap-x-4 px-4 py-2 "
+        className=" cursor-none hover:cursor-none border-b-4  border-secondary flex gap-x-4 lg:px-4 sm:px-2 lg:py-2 sm:py-1 text-sm"
         animate={{ y: [0, -3, 0], x: [0, -2, 0] }} // Animation for translateY
         transition={{ duration: 4, repeat: Infinity }}
         whileHover={{ y: 0, x: 0 }} // Stop animation on hover
