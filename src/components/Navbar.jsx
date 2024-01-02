@@ -6,7 +6,7 @@ const Navbar = ({ setCurrentPage }) => {
   const html = document.querySelector("html");
 
   return (
-    <nav className="flex items-center justify-center pt-5 font-ubuntu relative  p-2 text-text bg-background">
+    <nav className="flex items-center justify-center pt-10 md:pt-5 font-ubuntu relative  p-2 text-text bg-background">
       <motion.div
         className="absolute left-1"
         animate={{ y: [0, -3, 0], x: [0, -2, 0] }} // Animation for translateY
@@ -21,7 +21,7 @@ const Navbar = ({ setCurrentPage }) => {
         </h1>
       </motion.div>
       <motion.div
-        className=" cursor-none hover:cursor-none border-b-4  border-secondary flex gap-x-4 lg:px-4 sm:px-2 lg:py-2 sm:py-1 text-sm"
+        className=" cursor-none hover:cursor-none border-b-4  border-secondary flex gap-x-4 lg:px-4 sm:px-2 lg:py-2 sm:py-1 text-sm ml-8 md:ml-0"
         animate={{ y: [0, -3, 0], x: [0, -2, 0] }} // Animation for translateY
         transition={{ duration: 4, repeat: Infinity }}
         whileHover={{ y: 0, x: 0 }} // Stop animation on hover

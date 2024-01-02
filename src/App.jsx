@@ -169,7 +169,7 @@ function App() {
       {currentPage === "work" && (
         <main>
           <motion.main
-            className="max-w-6xl mx-auto font-ubunut font-bold mt-10"
+            className="max-w-6xl mx-auto font-ubunut font-bold mt-10 ml-4 md:ml-0 font-ubuntu"
             initial="hidden"
             animate="visible"
             variants={containerVariants}

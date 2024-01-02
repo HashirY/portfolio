@@ -16,7 +16,7 @@ export const ProjectComponent = ({
 }) => {
   return (
     <motion.div
-      className={`grid grid-cols-2  shadow-md  p-4 gap-x-8  bg-cover font-fira ${
+      className={`grid grid-cols-1 ml-3 mr-3 md:ml-0 md:mr-0 md:grid-cols-2  shadow-md  p-4 gap-x-8  bg-cover font-fira ${
         leftOrRight === "left" ? "border-l-4" : "border-r-4"
       } border-text ${
         leftOrRight === "left" ? "rounded-r-lg" : "rounded-l-lg"
@@ -26,7 +26,7 @@ export const ProjectComponent = ({
       variants={firstProjectVariants}
     >
       {leftOrRight === "left" && (
-        <div className="flex w-full h-full items-center justify-center rounded-md shadow-md overflow-hidden transition-all blob2">
+        <div className="flex w-full h-full items-center justify-center rounded-md shadow-md overflow-hidden transition-all blob2 mt-4 md:mt-0">
           <img
             src={`/projects/${imgName}`}
             alt=""
@@ -38,13 +38,13 @@ export const ProjectComponent = ({
         <div
           className={`absolute ${
             leftOrRight === "left" ? "right-2 top-2" : "left-2 top-2"
-          } flex items-center justify-center gap-x-4`}
+          } flex items-center justify-center gap-x-4 `}
         >
           <a
             href={`${siteLink || ""}`}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-x-2 hover:text-emerald-400 transition-all text-text"
+            className="flex items-center justify-center gap-x-2 hover:text-emerald-400 transition-all text-text md:text-[16px] text-xs mb-20 md:mb-0"
           >
             <FaLink />
             <span>Live Link</span>
@@ -53,7 +53,7 @@ export const ProjectComponent = ({
             href={githubLink}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-x-2 hover:text-[#4078c0] text-text"
+            className="flex items-center justify-center gap-x-2 hover:text-[#4078c0] text-text md:text-[16px] text-xs mb-20 md:mb-0"
           >
             <SiGithub />
             <span>Github</span>
@@ -92,7 +92,7 @@ export const ProjectComponent = ({
         </div>
       </div>
       {leftOrRight === "right" && (
-        <div className="flex w-full h-full items-center justify-center rounded-md shadow-md overflow-hidden transition-all blob2">
+        <div className="flex w-full h-full items-center justify-center rounded-md shadow-md overflow-hidden transition-all blob2 mt-4 md:mt-0">
           <img
             src={`/projects/${imgName}`}
             alt=""
