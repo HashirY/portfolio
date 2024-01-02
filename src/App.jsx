@@ -52,7 +52,7 @@ const Typewriter = ({ text, speed = 50 }) => {
   }, [text, speed]);
 
   return (
-    <h1 className="text-text font-bold lg:text-4xl sm:text-xl text-center bg-secondary p-1.5">
+    <h1 className="text-text font-bold text-2xl md:text-4xl text-center bg-secondary p-1.5">
       {isTypingComplete ? text : displayedText}
     </h1>
   );
@@ -151,7 +151,7 @@ function App() {
               <div className="h-1 w-28 bg-secondary absolute -bottom-8 md:-right-6 -right-3" />
               <div className="h-20 w-1 bg-secondary absolute -bottom-8 md:-right-6 -right-3" />
               <Typewriter text={"Hi my name is Hashir Yameen"} />
-              <p className="text-text xs:text-sm xl:text-lg">
+              <p className="text-text text-sm md:text-md">
                 As a full-stack web developer, I thrive on turning complex ideas
                 into simple, elegant solutions. My expertise spans both
                 front-end and back-end technologies to create seamless and
@@ -419,11 +419,11 @@ function App() {
           >
             <div className="flex justify-around blob3 border-text border-4 h-[430px] mb-4 font-ubuntu text-text">
               <div className="mt-40 flex flex-col gap-y-4 transition-none">
-                <h1 className="text-3xl font-bold flex gap-x-3 items-center">
-                  <FaBriefcase className="text-accent" />
+                <h1 className=" text-lg md:text-3xl font-bold flex gap-x-3 items-center">
+                  <FaBriefcase className="text-accent text-4xl ml-4 md:text-[16px] md:ml-0" />
                   Dive deep in my professional journey
                 </h1>
-                <p className="text-center font-bold">
+                <p className="text-center font-bold text-xs md:text-[16px]">
                   Click on the button below to download my resume
                 </p>
                 <div className="flex items-center justify-center">
@@ -433,14 +433,14 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <button className="flex gap-x-2 items-center text-xl bg-accent text-text px-5 py-4 rounded-xl hover:bg-secondary">
+                    <button className="flex gap-x-2 items-center text-lg md:text-xl bg-accent text-text px-3 md:px-5 py-3 md:py-4 rounded-xl hover:bg-secondary">
                       <GrDocumentPerformance />
                       Résumé
                     </button>
                   </a>
                 </div>
               </div>
-              <div className="h-[100px] w-[280px]">
+              <div className="h-[100px] w-[280px] mt-14 mr-2 md:mt-0 md:mr-0">
                 <img
                   src="/resume/resume.png"
                   className="mt-4 border-r-4 border-b-4 border-text"
