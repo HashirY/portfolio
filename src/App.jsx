@@ -52,7 +52,7 @@ const Typewriter = ({ text, speed = 50 }) => {
   }, [text, speed]);
 
   return (
-    <h1 className="text-text font-bold text-4xl bg-secondary p-1.5">
+    <h1 className="text-text font-bold lg:text-4xl sm:text-xl text-center bg-secondary p-1.5">
       {isTypingComplete ? text : displayedText}
     </h1>
   );
@@ -144,14 +144,14 @@ function App() {
           animate="visible"
           variants={containerVariants}
         >
-          <section className="grid grid-cols-1 md:grid-cols-2 place-items-center mt-6 font-ubuntu text-text max-w-5xl mx-auto  border-accent p-3 relative">
+          <section className="grid sm:grid-cols-1 md:grid-cols-2 place-items-center sm:mt-24 lg:mt-6 font-ubuntu text-text max-w-5xl mx-auto  border-accent p-3 relative">
             <div className="flex flex-col gap-y-5 relative">
               <div className="h-1 w-28 bg-secondary absolute -top-10 -left-8" />
               <div className="h-20 w-1 bg-secondary absolute -top-10 -left-8" />
               <div className="h-1 w-28 bg-secondary absolute -bottom-8 -right-6" />
               <div className="h-20 w-1 bg-secondary absolute -bottom-8 -right-6" />
               <Typewriter text={"Hi my name is Hashir Yameen"} />
-              <p className="text-text">
+              <p className="text-text sm:text-sm xl:text-lg">
                 As a full-stack web developer, I thrive on turning complex ideas
                 into simple, elegant solutions. My expertise spans both
                 front-end and back-end technologies to create seamless and
@@ -159,7 +159,7 @@ function App() {
               </p>
             </div>
             <div>
-              <div className="blob ml-20"></div>
+              <div className="blob ml-20 sm:mt-10 lg:mt-0"></div>
             </div>
           </section>
           <Footer />
