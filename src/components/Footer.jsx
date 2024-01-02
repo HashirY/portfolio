@@ -3,7 +3,7 @@ import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <main className=" mx-auto flex items-center justify-center font-ubuntu">
+    <main className=" mx-auto w-full mt-4 md:mt-0 flex items-center justify-center font-ubuntu">
       <div className="border-b-4 flex gap-x-8 p-2 mb-2 border-secondary text-text">
         <a
           href="https://www.linkedin.com/in/hashir-yameen-52287a135/"
