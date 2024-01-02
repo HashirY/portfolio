@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text: #041b15;
+    --background: #fbfefe;
+    --primary: #26dfbd;
+    --secondary: #878bed;
+    --accent: #8f5fe7;
+  }
+  .dark {
+    --text: #e4fbf5;
+    --background: #010404;
+    --primary: #20d9b8;
+    --secondary: #121578;
+    --accent: #4718a0;
+  }
+}
+
+.blob {
+  background-image: url("/images/pp1.jpg");
+  width: 350px;
+  height: 440px;
+
+  background-size: 350px;
+  background-position: center center;
+  /* box-shadow: 0 5px 5px 5px rgba(197, 226, 219, 0.8); */
+  animation: animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+.blob2 {
+  background-size: 350px;
+  background-position: center center;
+  animation: animate2 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+.blob3 {
+  background-size: 350px;
+  background-position: center center;
+  animation: animate3 5s ease-in-out infinite;
+  transition: border 1s ease-in-out;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes animate2 {
+  0%,
+  100% {
+    border-radius: 100% 0% 100% 0% / 19% 78% 22% 81%;
+  }
+}
+@keyframes animate3 {
+  0%,
+  100% {
+    border-radius: 100% 0% 100% 0% / 38% 100% 0% 62%;
+  }
+
+  50% {
+    border-radius: 98% 2% 98% 2% / 36% 98% 2% 60%;
+  }
+}
+body {
+  cursor: none;
+}
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent);
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid var(--secondary);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
