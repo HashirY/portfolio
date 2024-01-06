@@ -18,11 +18,16 @@ import {
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { ProjectComponent } from "./components/site/ProjectComponent";
-import { FaReact, FaStripeS, FaNodeJs, FaBriefcase } from "react-icons/fa";
+import {
+  FaReact,
+  FaStripeS,
+  FaNodeJs,
+  FaBriefcase,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { DiMongodb } from "react-icons/di";
 import { SiAuthelia } from "react-icons/si";
-import { Link } from "react-router-dom";
 import { GrDocumentPerformance } from "react-icons/gr";
 import { TbBrandOpenai } from "react-icons/tb";
 
@@ -446,6 +451,23 @@ function App() {
               </div>
             </div>
           </motion.section>
+        </main>
+      )}
+
+      {currentPage === "contact" && (
+        <main className="flex flex-col items-center justify-center mt-20 font-ubuntu">
+          <h1 className="text-text text-4xl font-bold">Lets Connect !</h1>
+
+          <div className="flex gap-x-6 mt-6">
+            <div className="flex items-center gap-x-2 text-text bg-[#49C354] px-2 py-1 rounded-md transition-all">
+              <FaWhatsapp className="h-6 w-6 text-white" />
+              <span>+91 6239409233</span>
+            </div>
+            <div className="flex items-center gap-x-2 text-text bg-[#49C354] px-2 py-1 rounded-md transition-all">
+              <FaWhatsapp className="h-6 w-6 text-white" />
+              <span>+91 6239409233</span>
+            </div>
+          </div>
         </main>
       )}
     </section>
