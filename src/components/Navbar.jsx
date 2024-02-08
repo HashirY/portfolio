@@ -7,12 +7,7 @@ const Navbar = ({ setCurrentPage }) => {
 
   return (
     <nav className="flex items-center justify-center pt-10 md:pt-5 font-ubuntu relative  p-2 text-text bg-background">
-      <motion.div
-        className="absolute left-1"
-        animate={{ y: [0, -3, 0], x: [0, -2, 0] }} // Animation for translateY
-        transition={{ duration: 4, repeat: Infinity }}
-        whileHover={{ y: 0, x: 0 }} // Stop animation on hover
-      >
+      <motion.div className="absolute left-1">
         <h1 className="font-bold lg:text-2xl sm:text-md">
           <span>hashir</span>
           <span>.</span>
@@ -20,12 +15,7 @@ const Navbar = ({ setCurrentPage }) => {
           <div className="w-full h-1 bg-secondary"></div>
         </h1>
       </motion.div>
-      <motion.div
-        className=" cursor-none hover:cursor-none border-b-4  border-secondary flex gap-x-4 lg:px-4 sm:px-2 lg:py-2 sm:py-1 text-sm ml-8 md:ml-0"
-        animate={{ y: [0, -3, 0], x: [0, -2, 0] }} // Animation for translateY
-        transition={{ duration: 4, repeat: Infinity }}
-        whileHover={{ y: 0, x: 0 }} // Stop animation on hover
-      >
+      <motion.div className=" cursor-none hover:cursor-none border-b-4  border-secondary flex gap-x-4 lg:px-4 sm:px-2 lg:py-2 sm:py-1 text-sm ml-8 md:ml-0">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "font-bold underline" : "")}
@@ -38,7 +28,7 @@ const Navbar = ({ setCurrentPage }) => {
           onClick={() => setCurrentPage("work")}
           className={({ isActive }) => (isActive ? "font-bold underline" : "")}
         >
-          Work
+          Projects
         </NavLink>
         <NavLink
           to="/resume"

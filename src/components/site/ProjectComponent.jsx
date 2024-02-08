@@ -64,15 +64,23 @@ export const ProjectComponent = ({
         </h1>
 
         <p
-          className={`text-text text-xs font-semibold bg-secondary p-1 rounded-sm px-3 border-l-4 border-text`}
+          className={`text-text text-xs font-semibold border border-secondary p-1 px-3 rounded-xl`}
         >
           {projectSubheading}
         </p>
-        <p
-          className={`mt-3 text-text bg-secondary p-2.5 border-l-4 border-text`}
-        >
-          {projectDescription}
-        </p>
+        <div className={`mt-3 text-text`}>
+          <h3 className="text-center text-xl uppercase font-bold">Features</h3>
+          <div className="grid grid-cols-2 gap-1 font-ubuntu ">
+            {projectDescription.map((projectD) => (
+              <span
+                key={projectD}
+                className="text-xs border border-secondary p-0.5 rounded-xl text-center"
+              >
+                {projectD}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-text font-fira font-bold uppercase">

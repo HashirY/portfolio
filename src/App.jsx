@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import resumePdf from "/second_main_resume.pdf";
+import resumePdf from "/resume.pdf";
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import {
@@ -30,6 +30,9 @@ import { DiMongodb } from "react-icons/di";
 import { SiAuthelia } from "react-icons/si";
 import { GrDocumentPerformance } from "react-icons/gr";
 import { TbBrandOpenai } from "react-icons/tb";
+import { FaDatabase } from "react-icons/fa";
+import { RxFontStyle } from "react-icons/rx";
+import { FaBox } from "react-icons/fa";
 
 const Typewriter = ({ text, speed = 50 }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -76,6 +79,7 @@ function App() {
   const controls = useAnimation();
   const controls1 = useAnimation();
   const controls2 = useAnimation();
+  const controls3 = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -83,6 +87,9 @@ function App() {
     triggerOnce: true,
   });
   const [ref2, inView2] = useInView({
+    triggerOnce: true,
+  });
+  const [ref3, inView3] = useInView({
     triggerOnce: true,
   });
 
@@ -102,7 +109,21 @@ function App() {
     } else {
       controls2.start("hidden");
     }
-  }, [controls, inView, inView1, controls1, inView2, controls2]);
+    if (inView3) {
+      controls3.start("visible");
+    } else {
+      controls3.start("hidden");
+    }
+  }, [
+    controls,
+    inView,
+    inView1,
+    controls1,
+    inView2,
+    controls2,
+    controls3,
+    inView3,
+  ]);
 
   const firstProjectVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -181,22 +202,33 @@ function App() {
           >
             <section>
               <h1 className="flex items-center gap-x-3 text-4xl">
-                My Works <ArrowRight />
+                My Projects <ArrowRight />
               </h1>
             </section>
           </motion.main>
 
-          <section className="flex flex-col mt-10 gap-6 font-ubuntu">
+          <section className="flex flex-col mt-10 gap-12 font-ubuntu mb-5">
             <ProjectComponent
               firstProjectVariants={firstProjectVariants}
-              imgName={"lms-main.png"}
-              siteLink={"https://lms-studify-main.vercel.app/"}
-              githubLink={"https://github.com/HashirY/LMS-Studify"}
-              projectName={"Studify"}
-              projectSubheading={"A learning management system"}
-              projectDescription={
-                "Developed a seamless Learning Management System that blends education and entrepreneurship"
-              }
+              imgName={"dots.png"}
+              siteLink={"https://dots-sigma.vercel.app/"}
+              githubLink={"https://github.com/HashirY/dots"}
+              projectName={"Dots"}
+              projectSubheading={"A collaborative, real-time whiteboard"}
+              projectDescription={[
+                "🛠️ Whiteboard from Scratch",
+                "🧰 Toolbar with Text, Shapes, Sticky Notes & Pencil",
+                "🪄 Layering Functionality",
+                "🎨 Coloring System",
+                "↩️ Undo & Redo Functionality",
+                "⌨️ Keyboard Shortcuts",
+                "🤝 Real-time Collaboration",
+                "💾 Real-time Database",
+                "🔐 Auth, Organizations, and Invites",
+                "⭐️ Favoriting Functionality",
+                "🌐 Next.js 14 Framework",
+                "💅 TailwindCSS & ShadcnUI Styling",
+              ]}
               projectTechStack={[
                 {
                   name: "Next.js",
@@ -211,38 +243,63 @@ function App() {
                   icon: <SiTypescript />,
                 },
                 {
-                  name: "Stripe",
-                  icon: <FaStripeS />,
+                  name: "ConvexDB",
+                  icon: <FaDatabase />,
                 },
                 {
-                  name: "Prisma",
-                  icon: <SiPrisma />,
+                  name: "Clerk",
+                  icon: <SiAuthelia />,
                 },
                 {
-                  name: "SQL",
-                  icon: <GrMysql />,
+                  name: "ShadCN",
+                  icon: <RxFontStyle />,
+                },
+                {
+                  name: "LiveBlocks",
+                  icon: <FaBox />,
                 },
               ]}
               leftOrRight={"left"}
             />
             <ProjectComponent
               firstProjectVariants={secondProjectVariants}
-              imgName={"mern-estate.png"}
-              siteLink={"https://mern-estate-mwvw.onrender.com/"}
-              githubLink={"https://github.com/HashirY/mern-estate"}
-              projectName={"Mern Estate"}
-              projectSubheading={"A realtime home dealing full stack website"}
-              projectDescription={
-                "Created an full stack website where users can sell and rent houses as well as even list their own sites for sale or rent seemlessly with a very intuitive and easy to use UI"
+              imgName={"learnhub.png"}
+              siteLink={"https://chic-rabanadas-84edb4.netlify.app/"}
+              githubLink={"https://github.com/HashirY/lms-mern"}
+              projectName={"LearnHub"}
+              projectSubheading={
+                "A SAAS product which connects teachers and their students"
               }
+              projectDescription={[
+                "🎨4 vibrant themes with dark mode",
+                "🔒Clerk authentication for secure access",
+                "📷Seamless video call integration",
+                "📝Efficient note management: add, delete, and download",
+                "🗒️Comprehensive student reports for insights",
+                "⏰Stay organized with the integrated planner",
+                "💹Encouraging collaboration among students and educators.",
+                "💖Streamlining administrative tasks for educators, maximizing efficiency",
+              ]}
               projectTechStack={[
                 {
                   name: "React.js",
                   icon: <FaReact />,
                 },
                 {
-                  name: "Javascript",
+                  name: "Tailwind",
+                  icon: <SiTailwindcss />,
+                },
+                {
+                  name: "JavaScript",
                   icon: <IoLogoJavascript />,
+                },
+                {
+                  name: "Framer",
+                  icon: <SiFramer />,
+                },
+                {
+                  name: "Clerk",
+                  icon: <SiAuthelia />,
                 },
                 {
                   name: "MongoDB",
@@ -256,10 +313,6 @@ function App() {
                   name: "Nodejs",
                   icon: <FaNodeJs />,
                 },
-                {
-                  name: "Redux",
-                  icon: <SiRedux />,
-                },
               ]}
               leftOrRight={"right"}
             />
@@ -270,7 +323,7 @@ function App() {
               variants={firstProjectVariants}
             >
               <ProjectComponent
-                firstProjectVariants={firstProjectVariants}
+                firstProjectVariants={secondProjectVariants}
                 imgName={"atom-ui.png"}
                 siteLink={"https://atomui.vercel.app/"}
                 githubLink={"https://github.com/HashirY/CompxUI"}
@@ -278,9 +331,12 @@ function App() {
                 projectSubheading={
                   "A sleek and minimalist react component library"
                 }
-                projectDescription={
-                  "Created own component library for react and other frameworks fully customizable and minimalist sleek styles"
-                }
+                projectDescription={[
+                  "🔧 Created Own Component Library for Frameworks",
+                  "🛠️ Fully Customizable",
+                  "🎨 Minimalist Sleek Styles",
+                  "🚀 Ready to Use Components",
+                ]}
                 projectTechStack={[
                   {
                     name: "React.js",
@@ -309,39 +365,87 @@ function App() {
               variants={secondProjectVariants}
             >
               <ProjectComponent
-                firstProjectVariants={secondProjectVariants}
-                imgName={"learnhub.png"}
-                siteLink={
-                  "https://658ea2e0f7667f99781db937--sensational-axolotl-3f6722.netlify.app/"
-                }
-                githubLink={"https://github.com/HashirY/lms-mern"}
-                projectName={"LearnHub"}
-                projectSubheading={
-                  "A SAAS product which connects teachers and their students"
-                }
-                projectDescription={
-                  "Was Tired of boring college/school admin sites .. hence create this a much better much faster much easy to use and dynamic administration website"
-                }
+                firstProjectVariants={firstProjectVariants}
+                imgName={"lms-main.png"}
+                siteLink={"https://lms-studify-main.vercel.app/"}
+                githubLink={"https://github.com/HashirY/LMS-Studify"}
+                projectName={"Studify"}
+                projectSubheading={"A learning management system"}
+                projectDescription={[
+                  "📚🔍 Browse & Filter Courses",
+                  "💳 Purchase Courses using Stripe",
+                  "✅ Mark Chapters as Completed or Uncompleted",
+                  "📊 Progress Calculation of each Course",
+                  "👩‍🎓 Student Dashboard",
+                  "👨‍🏫 Teacher Mode",
+                  "➕ Create New Courses",
+                  "➕ Create New Chapters",
+                  "🔄 Easily Reorder Chapter Position with Drag 'n’ Drop",
+                  "📎 Upload Attachments and Videos using UploadThing",
+                  "🎥 Video Processing using Mux",
+                  "▶️ HLS Video Player using Mux",
+                  "📝 Rich Text Editor for Chapter",
+                  "🔐 Authentication using Clerk",
+                  "🔄 ORM using Prisma",
+                  "🗃️ MySQL Database using Planetscale",
+                ]}
                 projectTechStack={[
                   {
-                    name: "React.js",
-                    icon: <FaReact />,
+                    name: "Next.js",
+                    icon: <SiNextdotjs />,
                   },
                   {
                     name: "Tailwind",
                     icon: <SiTailwindcss />,
                   },
                   {
-                    name: "JavaScript",
+                    name: "TypeScript",
+                    icon: <SiTypescript />,
+                  },
+                  {
+                    name: "Stripe",
+                    icon: <FaStripeS />,
+                  },
+                  {
+                    name: "Prisma",
+                    icon: <SiPrisma />,
+                  },
+                  {
+                    name: "SQL",
+                    icon: <GrMysql />,
+                  },
+                ]}
+                leftOrRight={"right"}
+              />
+            </motion.section>
+
+            <motion.section
+              ref={ref2}
+              animate={controls2}
+              initial="hidden"
+              variants={firstProjectVariants}
+            >
+              <ProjectComponent
+                firstProjectVariants={secondProjectVariants}
+                imgName={"mern-estate.png"}
+                siteLink={"https://mern-estate-mwvw.onrender.com/"}
+                githubLink={"https://github.com/HashirY/mern-estate"}
+                projectName={"Mern Estate"}
+                projectSubheading={"A realtime home dealing full stack website"}
+                projectDescription={[
+                  "🔑 Advanced Authentication",
+                  "🏡 Real-world CRUD Operations",
+                  "💡 User-friendly Features",
+                  "🚀 Advanced Search Functionality",
+                ]}
+                projectTechStack={[
+                  {
+                    name: "React.js",
+                    icon: <FaReact />,
+                  },
+                  {
+                    name: "Javascript",
                     icon: <IoLogoJavascript />,
-                  },
-                  {
-                    name: "Framer",
-                    icon: <SiFramer />,
-                  },
-                  {
-                    name: "Clerk",
-                    icon: <SiAuthelia />,
                   },
                   {
                     name: "MongoDB",
@@ -355,15 +459,20 @@ function App() {
                     name: "Nodejs",
                     icon: <FaNodeJs />,
                   },
+                  {
+                    name: "Redux",
+                    icon: <SiRedux />,
+                  },
                 ]}
-                leftOrRight={"right"}
+                leftOrRight={"left"}
               />
             </motion.section>
+
             <motion.section
-              ref={ref2}
-              animate={controls2}
+              ref={ref3}
+              animate={controls3}
               initial="hidden"
-              variants={firstProjectVariants}
+              variants={secondProjectVariants}
             >
               <ProjectComponent
                 firstProjectVariants={firstProjectVariants}
@@ -372,9 +481,14 @@ function App() {
                 githubLink={"https://github.com/HashirY/summarizerAI"}
                 projectName={"Sumz"}
                 projectSubheading={"A accurate and to the point AI summarizer"}
-                projectDescription={
-                  "Tired of reading long articles ? Just paste the link of the article here and leave the rest to AI. It'll give you crisp and to the point summary about the article you have provided"
-                }
+                projectDescription={[
+                  "📱 Create a Responsive, Beautiful UI/UX",
+                  "🍷 Nice Touch of Glass Morphism using Tailwind CSS",
+                  "🚀 Make Advanced RTK Query API Requests that Fire on Condition",
+                  "💾 Save History using Local Storage",
+                  "📝 Handle Form Events and Catch Errors",
+                  "📋 Implement Copy to Clipboard",
+                ]}
                 projectTechStack={[
                   {
                     name: "React.js",
@@ -393,7 +507,7 @@ function App() {
                     icon: <TbBrandOpenai />,
                   },
                 ]}
-                leftOrRight={"left"}
+                leftOrRight={"right"}
               />
             </motion.section>
           </section>
